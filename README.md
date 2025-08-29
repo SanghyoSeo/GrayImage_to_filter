@@ -54,6 +54,15 @@ printf("Verilog MEM 파일: %s\n", memFile);  // MEM 파일 생성 완료 메시
 
 # BMP 그레이스케일 이미지 MEM 변환
 
+<br>
+
+__예시__
+
+[output_edge_001.bmp](https://github.com/user-attachments/files/22039277/output_edge_001.bmp)
+
+
+<br>
+
 // 소벨 필터
 ```
 int sobelX[3][3] = {

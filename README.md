@@ -1,12 +1,12 @@
 # BMP 그레이스케일 이미지 MEM 변환 소프트웨어
 
-## 1. ======== 파일 생성 추가 ========
+### 1. ======== 파일 생성 추가 ========
 ```
 const char* memFile = "output_image_001.mem";  // MEM 파일 이름 추가
 FILE* memOutFile = NULL;  // MEM 파일 포인터 추가
 ```
 
-## 2. ======== MEM 파일 생성 부분 (추가) ========
+### 2. ======== MEM 파일 생성 부분 (추가) ========
 __MEM 파일 생성__
 ```
 if (fopen_s(&memOutFile, memFile, "w") != 0 || memOutFile == NULL) {
@@ -27,7 +27,7 @@ for (int i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT; i++) {
 fclose(memOutFile);
 ```
 
-## 3. ================================================
+### 3. ================================================
 ```
 printf("Verilog MEM 파일: %s\n", memFile);  // MEM 파일 생성 완료 메시지 추가
 ```

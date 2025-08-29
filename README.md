@@ -18,7 +18,7 @@ if (fopen_s(&memOutFile, memFile, "w") != 0 || memOutFile == NULL) {
 ```
 
 __MEM 파일에 그레이스케일 데이터를 16진수로 쓰기__
-각 픽셀값을 2자리 16진수로 변환하고 줄바꿈(0x0D 0x0A)으로 구분
+- 각 픽셀값을 2자리 16진수로 변환하고 줄바꿈(0x0D 0x0A)으로 구분
 ```
 for (int i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT; i++) {
     fprintf(memOutFile, "%02X\r\n", grayscaleData[i]);

@@ -1,6 +1,7 @@
 # BMP 그레이스케일 이미지 MEM 변환 소프트웨어
 
-- verilog simulation을 위해 이미지의 각 픽셀을 16진수로 변환하고 0x0D 0x0A(ASCII: Carriage Return, Line Feed)로 각 픽셀을 구분
+- verilog simulation을 위해 이미지의 각 픽셀을 16진수로 변환하고
+  0x0D 0x0A(ASCII: Carriage Return, Line Feed)로 각 픽셀을 구분
 
 ### 1. ======== 파일 생성 추가 ========
 ```

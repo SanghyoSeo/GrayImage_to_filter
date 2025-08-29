@@ -7,6 +7,11 @@ verilog simulation을 위해 이미지의 각 픽셀을 16진수로 변환하고
 
 <br>
 
+__예시__
+<img width="470" height="423" alt="스크린샷 2025-08-29 115007" src="https://github.com/user-attachments/assets/9e9ad650-ff86-4731-8920-5ce19f227276" />
+
+<br>
+
 ### 1. ======== 파일 생성 추가 ========
 ```
 const char* memFile = "output_image_001.mem";  // MEM 파일 이름 추가

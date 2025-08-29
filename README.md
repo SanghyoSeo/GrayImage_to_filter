@@ -8,6 +8,7 @@ const char* memFile = "output_image_001.mem";  // MEM 파일 이름 추가
 FILE* memOutFile = NULL;  // MEM 파일 포인터 추가
 ```
 
+<br><br>
     
 ### 2. ======== MEM 파일 생성 부분 (추가) ========
 __MEM 파일 생성__
@@ -20,6 +21,7 @@ if (fopen_s(&memOutFile, memFile, "w") != 0 || memOutFile == NULL) {
 }
 ```
 
+<br><br>
   
 __MEM 파일에 그레이스케일 데이터를 16진수로 쓰기__
 - 각 픽셀값을 2자리 16진수로 변환하고 줄바꿈(0x0D 0x0A)으로 구분
@@ -30,7 +32,8 @@ for (int i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT; i++) {
 
 fclose(memOutFile);
 ```
-  
+
+<br><br>
   
 ### 3. ================================================
 ```

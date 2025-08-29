@@ -56,9 +56,7 @@ printf("Verilog MEM 파일: %s\n", memFile);  // MEM 파일 생성 완료 메시
 
 <br>
 
-__예시__
-
-[output_edge_001.bmp](https://github.com/user-attachments/files/22039303/output_edge_001.bmp)
+예시
 
 
 

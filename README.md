@@ -2,7 +2,8 @@
 
 <br>
 
-verilog simulation을 위해 이미지의 각 픽셀을 16진수로 변환하고 0x0D 0x0A(ASCII: Carriage Return, Line Feed)로 각 픽셀을 구분
+verilog simulation을 위해 이미지의 각 픽셀을 16진수로 변환하고 <br>
+0x0D 0x0A(ASCII: Carriage Return, Line Feed)로 각 픽셀을 구분한다.
 
 <br>
 

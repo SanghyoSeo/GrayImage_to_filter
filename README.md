@@ -1,6 +1,6 @@
 # BMP 이미지 변환 소프트웨어
 
-![output_grayscale_map.bmp](https://github.com/user-attachments/files/22039908/output_grayscale_map.bmp)
+!(https://github.com/user-attachments/files/22039908/output_grayscale_map.bmp)
 
 ## 문서 관리 정보
  - 문서 ID: BMP-DO178C-001
@@ -10,7 +10,7 @@
 
 ### 1. 소프트웨어 인증 계획서 (PSAC)
 #### 1.1 소프트웨어 개요
- - 소프트웨어 항목: BMP 그레이스케일 변환기 기능: 24비트 컬러 BMP 이미지를 8비트그레이스케일로 변환 중요도 레벨: DAL-D (경미한 고장 상황)
+ - 소프트웨어 항목: BMP 그레이스케일, .mem, sobel 변환기 기능: 24비트 컬러 BMP 이미지를 8비트 그레이스케일, .mem, sobel filter로 변환 중요도 레벨: DAL-D (경미한 고장 상황)
 
 #### 1.2 소프트웨어 생명주기 프로세스
  - 계획 수립 프로세스

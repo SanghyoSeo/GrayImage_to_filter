@@ -59,7 +59,6 @@ printf("Verilog MEM 파일: %s\n", memFile);  // MEM 파일 생성 완료 메시
 예시
 
 
-
 <br>
 
 // 소벨 필터
@@ -75,6 +74,9 @@ int sobelY[3][3] = {
     { 1,  2,  1}
 };
 ```
+
+<br><br>
+
 // 안전하게 픽셀 값 가져오기
 ```
 unsigned char getPixel(unsigned char* image, int width, int height, int x, int y) {
@@ -85,6 +87,9 @@ unsigned char getPixel(unsigned char* image, int width, int height, int x, int y
     return image[y * width + x];
 }
 ```
+
+<br><br>
+
 // 소벨 필터로 엣지 찾기
 ```
 void findEdges(unsigned char* input, unsigned char* output, int width, int height) {
@@ -108,8 +113,14 @@ void findEdges(unsigned char* input, unsigned char* output, int width, int heigh
     }
 }
 ```
+<br><br>
+
+```
 const char* edgeFile = "output_edge.bmp";        // 엣지 검출 BMP 파일 추가
 FILE* edgeOutFile = NULL;                        // 엣지 검출 BMP 파일 포인터 추가
+```
+
+<br><br>
 
 // 3. 그레이스케일 변환 후 엣지 검출 추가
 ```
@@ -117,6 +128,9 @@ for (int i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT; i++) {
     grayscaleData[i] = rgbToGrayscale(imageData[i]);
 }
 ```
+
+<br><br>
+
 // 엣지 검출을 위한 메모리 할당 및 처리
 ```
 uint8_t* edgeData = (uint8_t*)malloc(IMAGE_WIDTH * IMAGE_HEIGHT);
@@ -128,10 +142,15 @@ if (edgeData == NULL) {
 }
 ```
 
+<br><br>
+
 // 소벨 필터로 엣지 검출
 ```
 findEdges(grayscaleData, edgeData, IMAGE_WIDTH, IMAGE_HEIGHT);
 ```
+
+<br><br>
+
 // 4. 엣지 검출 BMP 파일 저장
 // 엣지 검출 결과를 BMP로 저장
 ```
@@ -144,11 +163,15 @@ if (fopen_s(&edgeOutFile, edgeFile, "wb") != 0 || edgeOutFile == NULL) {
 }
 ```
 
+<br><br>
+
 // 엣지 검출 BMP 헤더는 그레이스케일과 동일
 ```
 fwrite(&newFileHeader, sizeof(BMPFileHeader), 1, edgeOutFile);
 fwrite(&newInfoHeader, sizeof(BMPInfoHeader), 1, edgeOutFile);
 ```
+
+<br><br>
 
 // 그레이스케일 팔레트 쓰기
 ```
@@ -157,6 +180,8 @@ for (int i = 0; i < 256; i++) {
     fwrite(color, 4, 1, edgeOutFile);
 }
 ```
+
+<br><br>
 
 // 엣지 데이터 쓰기
 ```
@@ -171,10 +196,14 @@ for (int y = IMAGE_HEIGHT - 1; y >= 0; y--) {
 fclose(edgeOutFile);
 ```
 
+<br><br>
+
 // 엣지 데이터 메모리 해제 추가
 ```
 free(edgeData);
 ```
+
+<br><br>
 
 // 7. 완료 메시지 수정
 ```

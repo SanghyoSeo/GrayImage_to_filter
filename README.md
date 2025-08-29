@@ -1,8 +1,10 @@
 # BMP 그레이스케일 이미지 MEM 변환 소프트웨어
 
 ## 1. ======== 파일 생성 추가 ========
+```
 const char* memFile = "output_image_001.mem";  // MEM 파일 이름 추가
 FILE* memOutFile = NULL;  // MEM 파일 포인터 추가
+```
 
 ## 2. ======== MEM 파일 생성 부분 (추가) ========
 __MEM 파일 생성__

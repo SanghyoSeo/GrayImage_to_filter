@@ -1,6 +1,6 @@
 # BMP 이미지 변환 소프트웨어
 
-!(https://github.com/user-attachments/files/22039908/output_grayscale_map.bmp)
+![output_grayscale_map.bmp](https://github.com/user-attachments/files/22039908/output_grayscale_map.bmp)
 
 ## 문서 관리 정보
  - 문서 ID: BMP-DO178C-001

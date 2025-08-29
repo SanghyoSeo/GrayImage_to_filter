@@ -267,7 +267,7 @@ __예시__
 
 <br>
 
-// 소벨 필터
+- 소벨 필터
 ```
 int sobelX[3][3] = {
     {-1, 0, 1},
@@ -283,7 +283,7 @@ int sobelY[3][3] = {
 
 <br><br>
 
-// 안전하게 픽셀 값 가져오기
+- 안전하게 픽셀 값 가져오기
 ```
 unsigned char getPixel(unsigned char* image, int width, int height, int x, int y) {
     if (x < 0) x = 0;
@@ -296,7 +296,7 @@ unsigned char getPixel(unsigned char* image, int width, int height, int x, int y
 
 <br><br>
 
-// 소벨 필터로 엣지 찾기
+- 소벨 필터로 엣지 찾기
 ```
 void findEdges(unsigned char* input, unsigned char* output, int width, int height) {
     printf("엣지 검출 중...\n");
@@ -318,10 +318,7 @@ void findEdges(unsigned char* input, unsigned char* output, int width, int heigh
         }
     }
 }
-```
-<br><br>
 
-```
 const char* edgeFile = "output_edge.bmp";        // 엣지 검출 BMP 파일 추가
 FILE* edgeOutFile = NULL;                        // 엣지 검출 BMP 파일 포인터 추가
 ```
@@ -333,12 +330,8 @@ FILE* edgeOutFile = NULL;                        // 엣지 검출 BMP 파일 포
 for (int i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT; i++) {
     grayscaleData[i] = rgbToGrayscale(imageData[i]);
 }
-```
-
-<br><br>
 
 // 엣지 검출을 위한 메모리 할당 및 처리
-```
 uint8_t* edgeData = (uint8_t*)malloc(IMAGE_WIDTH * IMAGE_HEIGHT);
 if (edgeData == NULL) {
     printf("엣지 데이터 메모리 할당 실패\n");
@@ -346,12 +339,9 @@ if (edgeData == NULL) {
     free(grayscaleData);
     return 1;
 }
-```
-
-<br><br>
 
 // 소벨 필터로 엣지 검출
-```
+
 findEdges(grayscaleData, edgeData, IMAGE_WIDTH, IMAGE_HEIGHT);
 ```
 
@@ -367,30 +357,21 @@ if (fopen_s(&edgeOutFile, edgeFile, "wb") != 0 || edgeOutFile == NULL) {
     free(edgeData);
     return 1;
 }
-```
-
-<br><br>
 
 // 엣지 검출 BMP 헤더는 그레이스케일과 동일
-```
+
 fwrite(&newFileHeader, sizeof(BMPFileHeader), 1, edgeOutFile);
 fwrite(&newInfoHeader, sizeof(BMPInfoHeader), 1, edgeOutFile);
-```
-
-<br><br>
 
 // 그레이스케일 팔레트 쓰기
-```
+
 for (int i = 0; i < 256; i++) {
     uint8_t color[4] = { i, i, i, 0 };
     fwrite(color, 4, 1, edgeOutFile);
 }
-```
-
-<br><br>
 
 // 엣지 데이터 쓰기
-```
+
 for (int y = IMAGE_HEIGHT - 1; y >= 0; y--) {
     for (int x = 0; x < IMAGE_WIDTH; x++) {
         fwrite(&edgeData[y * IMAGE_WIDTH + x], 1, 1, edgeOutFile);
@@ -400,18 +381,14 @@ for (int y = IMAGE_HEIGHT - 1; y >= 0; y--) {
     }
 }
 fclose(edgeOutFile);
-```
-
-<br><br>
 
 // 엣지 데이터 메모리 해제 추가
-```
 free(edgeData);
 ```
 
 <br><br>
 
-// 7. 완료 메시지 수정
+7. 완료 메시지 수정
 ```
 printf("엣지 검출 BMP 파일: %s\n", edgeFile);        // 엣지 BMP 파일 메시지 추가
 ```
